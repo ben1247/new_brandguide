@@ -1,0 +1,44 @@
+test:
+  logging:
+    level: INFO
+    microFileCurrentLogFilename: ../bg-logs/new-micro/micro-file/micro.log
+    microFileArchivedLogFilenamePattern: ../bg-logs/new-micro/micro-file/micro-%d.log
+  database:
+    driverClass: com.mysql.jdbc.Driver
+    username: admin
+    password: admin123
+    url: jdbc:mysql://172.18.2.44:3306/dg_v1
+  pos:
+    appKey: jpdg_interface@lily.sh.cn
+    appSecret: lily20150820
+    serverUrl: http://erp.lily.sh.cn:9888/servlets/binserv/Rest
+
+pre:
+  logging:
+    level: INFO
+    microFileCurrentLogFilename: /data/bg-logs/new-micro/micro-file/micro.log
+    microFileArchivedLogFilenamePattern: /data/bg-logs/new-micro/micro-file/micro-%d.log
+  database:
+    driverClass: com.mysql.jdbc.Driver
+    username: jusr9q7sh5yd
+    password: UvevkjueB3ut2
+    url: jdbc:mysql://rdsoktjgzowmjgxf9mjoj.mysql.rds.aliyuncs.com/brand_guider_pre
+  pos:
+    appKey: jpdg_interface@lily.sh.cn
+    appSecret: lily20150820
+    serverUrl: http://erp.lily.sh.cn:9888/servlets/binserv/Rest
+
+product:
+  logging:
+    level: INFO
+    microFileCurrentLogFilename: /data/bg-logs/new-micro/micro-file/micro.log
+    microFileArchivedLogFilenamePattern: /data/bg-logs/new-micro/micro-file/micro-%d.log
+  database:
+    driverClass: com.mysql.jdbc.Driver
+    username: ubrandguider
+    password: lsdfkweori234jfDcjdf
+    url: jdbc:mysql://jconndmshzcxz.mysql.rds.aliyuncs.com/brand_guider
+  pos:
+    appKey: jpdg_interface@lily.sh.cn
+    appSecret: lily20150918
+    serverUrl: http://erp.lily.sh.cn/servlets/binserv/Rest

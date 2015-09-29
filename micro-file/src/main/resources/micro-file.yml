@@ -1,0 +1,75 @@
+# readme:
+# name：应用名称，这个必须设置
+# version：应用版本，如果不设置，则构建的应用没有版本号
+# enableDiscovery：是否开启服务发现
+# enableRegistration：是否开启服务注册
+# database配置与migration配置是可选的（不配置则不会执行migration动作），这里数据库配置用于migration向目标数据库执行脚本
+
+
+
+## instance configuration
+instance:
+  application:
+    name: micro-file
+    # version: 1.0
+
+## spring configuration
+# spring:
+#  contextConfigLocation: spring-sample.xml
+discovery:
+  enableDiscovery: false
+  enableRegistration: false
+  serverUrls: 127.0.0.1:8188
+
+
+## database configuration
+database:
+  driverClass: ${sys.BG_DB_DRIVER_CLASS}
+  username: ${sys.BG_DB_USERNAME}
+  password: ${sys.BG_DB_PASSWORD}
+  url: ${sys.BG_DB_URL}
+
+## db migration
+# migration:
+  ## profile
+  # profile: development
+
+# server configuration
+server:
+  type: simple
+  applicationContextPath: /
+  connector:
+    type: http
+    port: 8188
+  gzip:
+    enabled: false
+
+
+# Logging settings.
+logging:
+  # The default level of all loggers. Can be OFF, ERROR, WARN, INFO, DEBUG, TRACE, or ALL.
+  level: ${sys.BG_LOGGING_LEVEL}
+  # Logger-specific levels.
+  loggers:
+    # Sets the level for 'com.example.app' to DEBUG.
+    com.shuyun.soa: INFO
+    java.sql.Connection: DEBUG
+    java.sql.Statement: DEBUG
+    java.sql.PreparedStatement: DEBUG
+  appenders:
+
+    - type: console
+
+    - type: file
+      currentLogFilename: ${sys.BG_LOGGING_MICRO_FILE_CURRENTLOGFILENAME}
+      threshold: ALL
+      archive: true
+      archivedLogFilenamePattern: ${sys.BG_LOGGING_MICRO_FILE_ARCHIVEDLOGFILENAMEPATTERN}
+      archivedFileCount: 5
+      timeZone: UTC
+      logFormat: "[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%-5level] [%class{0}:%method:%line] [%t] [-[%msg]-] %n"
+
+pos:
+  appKey: ${sys.BG_LILY_POS_APPKEY}
+  appSecret: ${sys.BG_LILY_POS_SECRET}
+  serverUrl: ${sys.BG_LILY_POS_SERVERURL}
