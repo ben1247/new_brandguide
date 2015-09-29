@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import java.io.File;
 
 /**
- * Component:
+ * Component: 核心yml文件操作
  * Description:
  * Date: 15/9/29
  *
